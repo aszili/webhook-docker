@@ -37,4 +37,4 @@ jobs:
     with:
       target_tag: ${{ needs.initialize.outputs.TARGET_IMAGE_TAG }}
       build_args: WEBHOOK_VERSION=${{ needs.initialize.outputs.TARGET_IMAGE_TAG }}
-      force: ${{ env.FORCE_BUILD}}
+      force: ${{ contains(inputs.force, 'true') }}
